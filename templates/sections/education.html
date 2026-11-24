@@ -1,0 +1,12 @@
+<section id="education">
+  <h2>Education, certifications and achievements</h2>
+  <div class="edu">
+    {% for e in d.EDUCATION %}
+    <div class="card"><div class="when">{{ e.when or 'School' }}</div><h3>{{ e.title }}</h3><p class="muted">{{ e.where }}</p><p class="score">{{ e.score }}</p></div>
+    {% endfor %}
+  </div>
+  <div class="two">
+    <div class="card"><h3>Certifications</h3><ul>{% for c in d.CERTIFICATIONS %}<li>{{ c }}</li>{% endfor %}</ul></div>
+    <div class="card"><h3>Achievements and activities</h3><ul>{% for a in d.ACHIEVEMENTS %}<li>{{ a }}</li>{% endfor %}</ul></div>
+  </div>
+</section>

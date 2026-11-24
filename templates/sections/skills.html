@@ -1,0 +1,15 @@
+<section id="skills">
+  <h2>Technical skills</h2>
+  <div class="skills">
+    {% for title, items in d.SKILLS %}
+    <div class="card skill">
+      <h3>{{ title }}</h3>
+      <div class="chips">
+        {% for name, icon in items %}
+        <span>{% if "<svg" in icon %}{{ icon|safe }}{% else %}<i class="{{ icon }}" aria-hidden="true"></i>{% endif %}{{ name }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

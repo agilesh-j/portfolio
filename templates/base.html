@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ d.NAME }} – AI &amp; Data Science Student, Python Developer</title>
+  <meta name="description" content="{{ d.INTRO }}">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <canvas id="balls" aria-hidden="true"></canvas>
+  <nav class="nav">
+    <a class="logo" href="#home" aria-label="Agilesh J – home">AJ</a>
+    <div class="nav-links">
+      {% for id, label in [("about","About"),("skills","Skills"),("projects","Projects"),("experience","Experience"),("education","Education"),("contact","Contact")] %}
+      <a href="#{{ id }}">{{ label }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>{{ d.NAME }} · {{ d.LOCATION }}</footer>
+  <script src="/js/main.js"></script>
+  <script src="/js/balls.js"></script>
+</body>
+</html>

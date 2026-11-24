@@ -1,0 +1,24 @@
+<section id="home" class="hero">
+  <div>
+    <span class="pill"><i class="pulse"></i>Open to ML Engineer and AI developer roles</span>
+    <h1>{{ d.NAME }}</h1>
+    <p class="role">{{ d.ROLE_LINE }}</p>
+    <p class="lead">{{ d.INTRO }}</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Contact me</a>
+      <a class="btn" href="{{ d.LINKS.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="{{ d.LINKS.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      {% for number, label in d.STATS %}
+      <div><b>{{ number }}</b><span>{{ label }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Two photos stacked: the second one has closed eyes and fades in for a quick blink (see style.css) -->
+  <div class="photo">
+    <img src="/images/agilesh.jpg" alt="Portrait of Agilesh J">
+    <img src="/images/agilesh-blink.jpg" alt="">
+  </div>
+</section>

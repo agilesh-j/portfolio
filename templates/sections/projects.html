@@ -1,0 +1,17 @@
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    {% for p in d.PROJECTS %}
+    <article class="card project {{ 'featured' if p.featured }}" data-tilt>
+      <div class="tag">{{ p.tag }}</div>
+      <h3>{{ p.title }}</h3>
+      {% if p.metrics %}
+      <div class="metrics">{% for value, label in p.metrics %}<div><b>{{ value }}</b><span>{{ label }}</span></div>{% endfor %}</div>
+      {% endif %}
+      <ul>{% for point in p.points %}<li>{{ point }}</li>{% endfor %}</ul>
+      <div class="chips">{% for s in p.stack %}<span>{{ s }}</span>{% endfor %}</div>
+      {% if p.repo %}<a class="btn small" href="{{ p.repo }}" target="_blank" rel="noopener">View on GitHub</a>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

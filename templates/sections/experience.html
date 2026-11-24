@@ -1,0 +1,13 @@
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    {% for job in d.EXPERIENCE %}
+    <article class="job {{ 'now' if job.current }}">
+      <div class="when">{{ job.when }}{% if job.current %}<span class="live"><i class="pulse"></i>Working now</span>{% endif %}</div>
+      <h3>{{ job.role }}</h3>
+      <div class="company">{{ job.company }}</div>
+      <p>{{ job.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
